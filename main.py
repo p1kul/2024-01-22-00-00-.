@@ -37,7 +37,6 @@ async def main_menu(message):
 async def get_formulas(call):
     await call.message.answer('для мужчин: 10 х вес (кг) + 6,25 x рост (см) – 5 х возраст (г) + 5')
 
-
 @dp.callback_query_handler(text = 'calories')
 async def set_age(call):
     await call.message.answer('Введите свой возраст:')
