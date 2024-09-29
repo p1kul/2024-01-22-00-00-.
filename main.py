@@ -4,6 +4,7 @@ from aiogram.dispatcher.filters.state import State, StatesGroup
 import asyncio
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
 api = 'ключ'
 bot = Bot(api)
 dp = Dispatcher(bot, storage = MemoryStorage())
@@ -19,11 +20,11 @@ but1 = InlineKeyboardButton(text='Рассчитать норму калорий
 but2 = InlineKeyboardButton(text='Формулы расчёта', callback_data='formulas')
 keybord.add(but1,but2)
 
-
 class UserState(StatesGroup):
     age = State()
     growth = State()
     weight = State()
+
 @dp.message_handler(commands=['start'])
 async def start(message):
     await message.answer('Привет! Я бот помогающий твоему здоровью.', reply_markup=kb)
